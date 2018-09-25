@@ -1,12 +1,14 @@
 <?php
 namespace App\Controllers;
+use Core\BaseController;
 
-class PostsController
+class PostsController extends BaseController
 {
 	
-	public function index()
+	public function index($request = null)
 	{
-		echo "Posts";
+		$this->view->page = "Posts";
+		$this->renderView('Posts/index', 'layout');
 	}
 
 	public function show($id)
