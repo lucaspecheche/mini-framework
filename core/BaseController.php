@@ -46,6 +46,10 @@ abstract class BaseController //Não pode ser estanciada, somente herdada
 
 	protected function getPageTitle($separator = null)
 	{
-		return $this->pageTitle;
+		if($separator){
+			echo $this->pageTitle . " " . $separator . " ";
+		}else{
+			echo $this->pageTitle;
+		}
 	}
 }

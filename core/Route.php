@@ -87,7 +87,7 @@ class Route
 					break;
 			}
 		}else{
-			echo "Pagina não encontrada";
+			Container::pageNotFound();
 		}
 	}
 	
