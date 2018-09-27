@@ -10,7 +10,7 @@ return [
     ],
 
     'mysql' => [
-        'host' => 'localhost',
+        'host' => '127.0.0.1',
         'database' => 'mini_fk',
         'user' => 'lucas',
         'pass' => 'pecheche17',

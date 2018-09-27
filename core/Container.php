@@ -17,5 +17,11 @@ class Container
 			echo "Página não encontrada";
 		}
 	}
+
+	public static function getModel($model)
+	{
+		$objModel = "\\App\\Models\\" . $model;
+		return new $objModel(DataBase::getDatabase());
+	}
 	
 }

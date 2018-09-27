@@ -1,22 +1,26 @@
 <?php
 namespace App\Controllers;
+
 use Core\BaseController;
-use App\Models\Post;
-use Core\DataBase;
+use Core\Container;
 
 class PostsController extends BaseController
 {
 	
 	public function index($request = null)
 	{
-		$model = new Post(DataBase::getDatabase());
-		$posts = $model->All();
-		//$this->view->page = "Posts";
-		//$this->renderView('Posts/index', 'layout');
+		$this->setPageTitle('Posts');
+		$model = Container::getModel('Post');
+		$this->view->posts = $model->All();
+		$this->renderView('Posts/index', 'layout');
 	}
 
 	public function show($id)
 	{
-		echo $id;
+		$model = Container::getModel('Post'); //Model Post
+		$this->view->post = $model->find($id);
+		$this->setPageTitle("{$this->view->post->title}");
+		$this->renderView('Posts/show', 'layout');
+
 	}
 }

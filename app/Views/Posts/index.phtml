@@ -1,1 +1,16 @@
-<p><strong>Página: </strong><?php echo $this->view->page; ?></p>
+<div class="container">
+    <div class="row">
+        <h1 class="h1">
+            <?php $this->getPageTitle(); ?>
+        </h1>
+    </div>
+
+    <?php foreach($this->view->posts as $post): ?>
+    <div class="row">
+        <h3 class="h3">
+        <a href="/post/<?php echo $post->id; ?>/show"> <?php echo $post->title ?> </a> </h3>
+        <p class="text-justify"><?php echo $post->content ?></p>
+    </div>
+
+    <?php endforeach; ?>
+</div>
